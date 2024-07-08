@@ -1,0 +1,155 @@
+/* General reset for padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1em;
+}
+
+header nav ul li a:hover {
+    color: #e8491d;
+}
+
+/* Container styling */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+/* About Us section styling */
+main section {
+    padding: 20px;
+    background: #fff;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+main p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Payment Plan section styling */
+.payment-plan {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.payment-plan h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.payment-plan p {
+    margin-bottom: 20px;
+}
+
+.payment-plan form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment-plan form input[type="text"],
+.payment-plan form input[type="email"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.payment-plan form .cash-app-link {
+    display: inline-block;
+    color: #fff;
+    background: #e8491d;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.payment-plan form .cash-app-link:hover {
+    background: #333;
+    color: #e8491d;
+}
+
+.payment-plan form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.payment-plan form button:hover {
+    background: #e8491d;
+}
+
+/* Footer styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

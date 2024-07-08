@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - RecipeWonders</title>
+    <link rel="stylesheet" href="homestyles.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-b5s07VzInQ52M5MpAQac0uIwyOZNTaZRxntmbG1KNmPC6kPjb5sXD/O0rkHWog/uZTj3CgQO5Nj9iLbkL6AaZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Additional CSS for background image */
+        #showcase {
+            background: url('https://media.istockphoto.com/id/1223383996/photo/chef-tossing-flaming-vegetable.jpg?s=612x612&w=0&k=20&c=6K9jPlnfL6Rdf16-08RaK6DRfP03wy8pSZviicDpuVQ=') no-repeat center center/cover;
+            color: #fff;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        #showcase .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #e8491d;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">RecipeWonders</span>AI</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">About Us</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="https://tj-1acf5f.zapier.app">Find Your Recipes</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="subscribe.html">Subscribe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Welcome to <span class="highlight">RecipeWonders</span></h1>
+            <p>Discover delicious recipes tailored to your preferences.</p>
+            <a href="index.html" class="button">Learn More</a>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <div class="feature">
+                <h3>Recipe Customization</h3>
+                <p>Customize your recipe searches based on cuisine, dietary restrictions, and favorite ingredients.</p>
+            </div>
+            <div class="feature">
+                <h3>AI-Powered Recommendations</h3>
+                <p>Receive personalized recipe recommendations powered by artificial intelligence.</p>
+            </div>
+            <div class="feature">
+                <h3>User-Friendly Interface</h3>
+                <p>Enjoy a seamless experience with our intuitive and easy-to-navigate interface.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sendVideo">
+        <div class="container">
+            <div class="video-icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <div class="send-video-form">
+                <h2>Send Videos for Recipes!</h2>
+                <form id="videoForm" action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" accept="video/*" id="videoInput" name="video">
+                    <button type="submit">Send Video</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>RecipeWonders &copy; 2024</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="server.js"></script>
+</body>
+</html>

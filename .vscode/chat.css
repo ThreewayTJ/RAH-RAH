@@ -1,0 +1,40 @@
+/* Basic reset for padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    background-color: #f9f9f9; /* Light background color */
+    color: #333; /* Dark text color */
+    font-family: 'Arial', sans-serif; /* Clean font for better readability */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    background-color: #282c34; /* Dark background for header */
+    color: white; /* White text color for header */
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Larger heading for header */
+    margin-bottom: 0.5rem;
+}
+
+/* Navigation menu styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+}
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Recipes - RecipeWonders</title>
+    <link rel="stylesheet" href="discover.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">RecipeWonders</span>AI</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">About Us</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="https://tj-1acf5f.zapier.app">Find Your Recipes</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="subcribe.html">Subscribe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="results">
+        <div class="container">
+            <h2>Discover New Recipes</h2>
+            <div class="grid">
+                <div class="recipe-card">
+                    <img src="https://export-download.canva.com/EjnQM/DAGJ03EjnQM/3/0/0001-7035055633723830937.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJHKNGJLC2J7OGJ6Q%2F20240702%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240702T093344Z&X-Amz-Expires=39076&X-Amz-Signature=6180b2da1468fa7f5f7c517e22cdf191cc79ba0cdd1ace754493c1b927112f6f&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Untitled%2520design.png&response-expires=Tue%2C%2002%20Jul%202024%2020%3A25%3A00%20GMT" alt="Chicken Caesar Salad">
+                    <h3><a href="#" class="recipe-link" data-food="Chicken Caesar Salad">Chicken Caesar Salad</a></h3>
+                    <p>A classic salad with tender chicken, crisp lettuce, and savory dressing.</p>
+                </div>
+                <div class="recipe-card">
+                    <img src="https://export-download.canva.com/EjnQM/DAGJ03EjnQM/4/0/0001-9047038767203673536.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJHKNGJLC2J7OGJ6Q%2F20240701%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240701T235153Z&X-Amz-Expires=74051&X-Amz-Signature=554ae957770a54d73a56ccde857d1946ddc20b71ba2532131c657fcce9e01a57&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Untitled%2520design.png&response-expires=Tue%2C%2002%20Jul%202024%2020%3A26%3A04%20GMT" alt="Birria Tacos">
+                    <h3><a href="#" class="recipe-link" data-food="Birria Tacos">Birria Tacos</a></h3>
+                    <p>Traditional Mexican tacos filled with flavorful birria meat and served with consommé.</p>
+                </div>
+                <div class="recipe-card">
+                    <img src="https://export-download.canva.com/EjnQM/DAGJ03EjnQM/2/0/0001-8096779245502615857.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJHKNGJLC2J7OGJ6Q%2F20240702%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240702T000411Z&X-Amz-Expires=75183&X-Amz-Signature=2f11755b7c18e0e8e89594abaeccc650799efb166e44b171dd3ad905961c5d4b&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Untitled%2520design.png&response-expires=Tue%2C%2002%20Jul%202024%2020%3A57%3A14%20GMT" alt="Spaghetti">
+                    <h3><a href="#" class="recipe-link" data-food="Spaghetti">Spaghetti</a></h3>
+                    <p>Classic Italian pasta dish with tomato sauce, herbs, and parmesan cheese.</p>
+                </div>
+                <div class="recipe-card">
+                    <img src="https://export-download.canva.com/EjnQM/DAGJ03EjnQM/5/0/0001-2614772598892035003.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJHKNGJLC2J7OGJ6Q%2F20240702%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240702T135219Z&X-Amz-Expires=25040&X-Amz-Signature=7320ef68b3489e15b4cffaf5b9f0222505bc9b83585325b246930de467d3c286&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Untitled%2520design.png&response-expires=Tue%2C%2002%20Jul%202024%2020%3A49%3A39%20GMT" alt="Vegan Chili">
+                    <h3><a href="#" class="recipe-link" data-food="Vegan Chili">Vegan Chili</a></h3>
+                    <p>Hearty chili made with beans, vegetables, and spices, perfect for vegans and vegetarians.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>RecipeWonders &copy; 2024</p>
+    </footer>
+
+    <!-- Script for chatbot response -->
+    <script>
+        // Wait for the document to be fully loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            // Select all recipe links
+            const recipeLinks = document.querySelectorAll('.recipe-link');
+
+            // Attach click event listener to each recipe link
+            recipeLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    const foodName = this.dataset.food; // Get the food name from data-food attribute
+                    alert(`Chatbot: Finding recipes for ${foodName}.`); // Alert the chatbot response
+                    // Add further logic to handle chatbot integration or redirection
+                });
+            });
+        });
+    </script>
+</body>
+</html>
