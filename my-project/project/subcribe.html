@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - RecipeWonders</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <h1>RecipeWonders</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+                <li><a href="https://tj-1acf5f.zapier.app">Find Your Recipes</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="subscribe.html">Subscribe</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>About RecipeWonders</h2>
+            <p>Welcome to RecipeWonders, your culinary journey starts here...</p>
+        </section>
+        <section class="payment-plan">
+            <h2>Payment Plan</h2>
+            <p>Subscribe to our premium features using Stripe!</p>
+            <form id="payment-form">
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="card-element">
+                    Credit or debit card
+                </label>
+                <div id="card-element">
+                    <!-- A Stripe Element will be inserted here. -->
+                </div>
+
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert"></div>
+
+                <button type="submit">Pay and Subscribe</button>
+            </form>
+        </section>
+        <section id="perks">
+            <h2>Exclusive Features</h2>
+            <ul>
+                <li>Ingredient-Based Search</li>
+                <li>Recipe Customization</li>
+                <li>Meal Planning</li>
+                <li>User Reviews and Ratings</li>
+                <li>Recipe Sharing</li>
+                <li>Cooking Challenges</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 RecipeWonders. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        // Replace with your own Publishable Key
+        var stripe = Stripe('pk_test_51PYDYSHOgiGNzbxMK43MPAkywVb02imtIAtq3UJWrQhzPRJW3cx6Ei5G8AnDBd62VidQ7fuzPxUi4gZAYvL4DzQh00YPs7RoNb');
+        
+        var elements = stripe.elements();
+
+        // Custom styling can be passed to options when creating an Element.
+        var style = {
+            base: {
+                // Add your base input styles here. For example:
+                fontSize: '16px',
+                color: "#32325d",
+            }
+        };
+
+        // Create an instance of the card Element.
+        var card = elements.create('card', {style: style});
+
+        // Add an instance of the card Element into the `card-element` div.
+        card.mount('#card-element');
+
+        // Handle real-time validation errors from the card Element.
+        card.on('change', function(event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        // Handle form submission.
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createPaymentMethod({
+                type: 'card',
+                card: card,
+                billing_details: {
+                    // Include relevant details
+                    name: document.getElementById('username').value,
+                    email: document.getElementById('email').value,
+                    // Add more billing details as needed
+                }
+            }).then(function(result) {
+                if (result.error) {
+                    // Inform the user if there was an error.
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Send the payment method ID to your server.
+                    stripePaymentMethodHandler(result.paymentMethod);
+                }
+            });
+        });
+
+        // Submit the form with the payment method ID.
+        function stripePaymentMethodHandler(paymentMethod) {
+            // Insert the payment method ID into the form so it gets submitted to the server
+            var form = document.getElementById('payment-form');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'paymentMethod');
+            hiddenInput.setAttribute('value', paymentMethod.id);
+            form.appendChild(hiddenInput);
+
+            // Submit the form
+            form.submit();
+        }
+    </script>
+</body>
+</html>
