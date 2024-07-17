@@ -1,4 +1,6 @@
 /* homestyles.css */
+
+/* General Reset */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,39 +8,12 @@ body {
   box-sizing: border-box;
 }
 
+/* Header Styles */
 header {
-  background-color: #333;
+  background-color: #1976d2; /* Blue background */
   color: #fff;
   padding: 1em 0;
   text-align: center;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-}
-
-nav ul li {
-  margin: 0 1em;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.1em;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-}
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
 }
 
 #branding {
@@ -78,9 +53,10 @@ header nav ul li a:hover {
   color: #e8491d;
 }
 
+/* Showcase Styles */
 #showcase {
   min-height: 400px;
-  background: #333 url('showcase.jpg') no-repeat center center/cover;
+  background: #1976d2 url('showcase.jpg') no-repeat center center/cover; /* Blue background */
   color: #fff;
   text-align: center;
   padding-top: 100px;
@@ -103,7 +79,7 @@ header nav ul li a:hover {
 .button {
   display: inline-block;
   color: #fff;
-  background: #e8491d;
+  background: #e8491d; /* Red button color */
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
@@ -115,6 +91,7 @@ header nav ul li a:hover {
   color: #e8491d;
 }
 
+/* Features Section Styles */
 #features {
   margin: 20px 0;
 }
@@ -136,6 +113,7 @@ header nav ul li a:hover {
   margin-bottom: 10px;
 }
 
+/* Send Video Section Styles */
 #sendVideo {
   margin: 20px 0;
   padding: 20px;
@@ -162,50 +140,11 @@ header nav ul li a:hover {
   margin-bottom: 10px;
 }
 
+/* Footer Styles */
 footer {
-  background: #333;
+  background: #1976d2; /* Blue background */
   color: #fff;
   text-align: center;
   padding: 10px 0;
   margin-top: 20px;
-}
-
-/* Sign-in area styling */
-#sign-in {
-  background: #f4f4f4;
-  padding: 20px;
-  margin: 20px auto;
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#sign-in h2 {
-  margin-bottom: 20px;
-}
-
-#sign-in input[type="text"],
-#sign-in input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-#sign-in button {
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#sign-in button:hover {
-  background-color: #e8491d;
-}
-
-.g-signin2 {
-  margin-top: 10px;
 }

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe - RecipeWonders</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to right, #f7f7f7, #ffffff);
+        }
+
+        header {
+            width: 100%;
+            background: #3f51b5;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .subscription-plans {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .box {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 30%;
+        }
+
+        .box h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .box p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .box ul li {
+            margin-bottom: 10px;
+        }
+
+        .box ul li::before {
+            content: "✓";
+            margin-right: 5px;
+        }
+
+        .box button {
+            background: #212121;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .box button:hover {
+            background: #424242;
+        }
+
+        .payment-form {
+            margin-top: 50px;
+            width: 100%;
+            max-width: 600px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .payment-form button {
+            width: 100%;
+            background: #3f51b5;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .payment-form button:hover {
+            background: #303f9f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RecipeWonders</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+                <li><a href="https://tj-1acf5f.zapier.app">Find Your Recipes</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="subscribe.html">Subscribe</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Subscribe to RecipeWonders</h2>
+        <p>Unlock premium features by subscribing to one of our plans.</p>
+        <div class="subscription-plans">
+            <div class="box">
+                <h2>Basic</h2>
+                <p>$9.99 / month</p>
+                <ul>
+                    <li>Access to 100+ Recipes</li>
+                    <li>Weekly Recipe Suggestions</li>
+                    <li>Basic Meal Planning</li>
+                </ul>
+                <button>Get Started</button>
+            </div>
+            <div class="box">
+                <h2>Pro</h2>
+                <p>$19.99 / month</p>
+                <ul>
+                    <li>Access to 500+ Recipes</li>
+                    <li>Daily Recipe Suggestions</li>
+                    <li>Advanced Meal Planning</li>
+                    <li>Ingredient-Based Search</li>
+                </ul>
+                <button>Get Started</button>
+            </div>
+            <div class="box">
+                <h2>Enterprise</h2>
+                <p>$29.99 / month</p>
+                <ul>
+                    <li>Access to All Recipes</li>
+                    <li>Personalized Recipe Suggestions</li>
+                    <li>Comprehensive Meal Planning</li>
+                    <li>Exclusive Cooking Tips</li>
+                    <li>24/7 Customer Support</li>
+                </ul>
+                <button>Get Started</button>
+            </div>
+        </div>
+        <div class="payment-form">
+            <h2>Payment Details</h2>
+            <form id="payment-form">
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe Now</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 RecipeWonders. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - RecipeWonders</title>
+    <link rel="stylesheet" href="signin.css">
+    <!-- Google Sign-In API -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Apple Sign-In API -->
+    <script src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .left-column, .right-column {
+            width: 100%;
+            padding: 50px;
+        }
+
+        .left-column {
+            background-color: #f8f9fa;
+        }
+
+        .right-column {
+            background-color: #3f51b5;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #212529;
+        }
+
+        .right-column h1 {
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #6c757d;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #3f51b5;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .image-placeholder {
+            width: 200px;
+            height: 200px;
+            background-color: #ececec;
+            margin: 20px 0;
+        }
+
+        .signin-form {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .social-login {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">
+            <h1>Join the Future of Blockchain Technology</h1>
+            <p>Be part of our community and stay updated with the latest trends and breakthroughs in blockchain technology.</p>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <button type="submit">Join Now</button>
+            </form>
+        </div>
+        <div class="right-column">
+            <h1>Welcome to the Future</h1>
+            <p>Discover how blockchain is revolutionizing the tech industry and how you can be part of this revolution.</p>
+            <div class="image-placeholder"></div>
+        </div>
+        <div class="signin-form">
+            <h1>Sign In</h1>
+            <form action="submit_form.html" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <h2>Dietary Preferences</h2>
+                <div class="form-group">
+                    <label for="diet">Dietary Restrictions</label>
+                    <select id="diet" name="diet">
+                        <option value="none">None</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                        <option value="keto">Keto</option>
+                        <option value="paleo">Paleo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="allergies">Allergies</label>
+                    <textarea id="allergies" name="allergies" rows="4" placeholder="List any allergies..."></textarea>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+            <div class="social-login">
+                <h2>Or Sign In With</h2>
+                <!-- Google Sign-In Button -->
+                <div id="g_id_onload"
+                    data-client_id="648854611952-lfeslajq40d55u8j3n9tbqdos8fh0uu5.apps.googleusercontent.com"
+                    data-login_uri="https://console.cloud.google.com/apis/credentials/oauthclient/648854611952-lfeslajq40d55u8j3n9tbqdos8fh0uu5.apps.googleusercontent.com?project=website-428918"
+                    data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin"
+                    data-type="standard"
+                    data-shape="rectangular"
+                    data-theme="outline"
+                    data-text="sign_in_with"
+                    data-size="large">
+                </div>
+                <!-- Apple Sign-In Button -->
+                <div id="appleid-signin"></div>
+                <script type="text/javascript">
+                    AppleID.auth.init({
+                        clientId : 'YOUR_APPLE_CLIENT_ID',
+                        scope : 'name email',
+                        redirectURI : 'YOUR_REDIRECT_URI',
+                        usePopup : true // or false defaults to false
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    <script src="signin.js"></script>
+</body>
+</html>

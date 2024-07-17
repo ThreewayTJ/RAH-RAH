@@ -76,6 +76,7 @@ main section {
 main h2 {
     margin-bottom: 10px;
     font-size: 2rem;
+    color: #333;
 }
 
 main p {
@@ -94,6 +95,7 @@ main p {
 .payment-plan h2 {
     margin-bottom: 10px;
     font-size: 1.8rem;
+    color: #333;
 }
 
 .payment-plan p {
@@ -143,6 +145,75 @@ main p {
 
 .payment-plan form button:hover {
     background: #e8491d;
+}
+
+/* User Reviews and Ratings section styling */
+#reviews {
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+#reviews h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+#reviews form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reviews form input[type="text"],
+#reviews form textarea,
+#reviews form select {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#reviews form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#reviews form button:hover {
+    background: #e8491d;
+}
+
+#reviews-list {
+    margin-top: 20px;
+}
+
+.review {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.review h3 {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.review p {
+    margin-bottom: 5px;
+    line-height: 1.6;
 }
 
 /* Footer styling */
